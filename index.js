@@ -3,8 +3,11 @@ $(document).ready(function () {
         // sticky navbar on scroll script
         if (this.scrollY > 20) {
             $('.navbar').addClass("sticky");
+            $('.coolhover').addClass("change-underline");
         } else {
             $('.navbar').removeClass("sticky");
+            $('.coolhover').removeClass("change-underline");
+
         }
 
         // scroll-up button show/hide script
@@ -14,6 +17,24 @@ $(document).ready(function () {
             $('.scroll-up-btn').removeClass("show");
         }
     });
+    document.querySelectorAll(".langs button").forEach(item => {
+        var dk = document.querySelector(".dk");
+        var en = document.querySelector(".en");
+        item.addEventListener('click', event => {
+            dk.classList.remove("chosen-language");
+            en.classList.remove("chosen-language");
+            item.classList.add("chosen-language")
+        })
+    })
+    ScrollOut({
+        onShown(el) {
+            document.querySelectorAll(".line").forEach((item) => {
+                item.classList.add("progressbar")
+            });
+
+        }
+    });
+
 
     // slide-up script
     $('.scroll-up-btn').click(function () {
@@ -35,14 +56,14 @@ $(document).ready(function () {
 
     // typing text animation script
     var typed = new Typed(".typing", {
-        strings: ["Student", "Developer", "Philantrophist", "Freelancer"],
+        strings: ["Elev", "Udvikler", "Designer", "Freelancer"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
     });
 
     var typed = new Typed(".typing-2", {
-        strings: ["Student", "Developer", "Philantrophist", "Freelancer"],
+        strings: ["Elev", "Udvikler", "Designer", "Freelancer"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true

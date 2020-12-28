@@ -123,7 +123,7 @@ function submitForm() {
     formData.append("subject", getEl(".subject").value);
     formData.append("message", getEl(".email-textarea textarea").value);
     var ajax = new XMLHttpRequest();
-    ajax.open("POST", "../email-parser.php");
+    ajax.open("POST", "email-parser.php");
     ajax.onreadystatechange = () => {
         if (ajax.readyState === 4 && ajax.status === 200) {
             if (ajax.responseText === "´succes") {

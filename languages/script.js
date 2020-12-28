@@ -109,30 +109,31 @@ gakka();
 */
 
 
-function getEl(id) {
-    return document.querySelector(id);
-}
-function submitForm() {
-    var div = document.createElement("div");
-    div.appendChild("Emailen blev sendt");
-    var divFalse = div.appendChild(`emailen kunne ikke sendes: ${ajax.responseText}`);
-    getEl(".email-button").disabled = true;
-    var formData = new FormData();
-    formData.append("name", getEl(".name").value);
-    formData.append("email", getEl(".email").value);
-    formData.append("subject", getEl(".subject").value);
-    formData.append("message", getEl(".email-textarea textarea").value);
-    var ajax = new XMLHttpRequest();
-    ajax.open("POST", "email-parser.php");
-    ajax.onreadystatechange = () => {
-        if (ajax.readyState === 4 && ajax.status === 200) {
-            if (ajax.responseText === "´succes") {
-                getEl(".email-form").appendChild(div);
-            } else {
-                getEl(".email-form").appendChild(divFalse);
-                getEl(".email-button").disabled = false;
-            }
-        }
-    }
-    ajax.send(formData);
-}
+//function getEl(id) {
+//    return document.querySelector(id);
+//}
+//function submitForm() {
+//    var div = document.createElement("div");
+//    div.appendChild("Emailen blev sendt");
+//    var divFalse = div.appendChild(`emailen kunne ikke sendes: ${ajax.responseText}`);
+//    getEl(".email-button").disabled = true;
+//    var formData = new FormData();
+//    formData.append("name", getEl(".name").value);
+//    formData.append("email", getEl(".email").value);
+//    formData.append("subject", getEl(".subject").value);
+//    formData.append("message", getEl(".email-textarea textarea").value);
+//    var ajax = new XMLHttpRequest();
+//    ajax.open("POST", "email-parser.php");
+//    ajax.onreadystatechange = () => {
+//        if (ajax.readyState === 4 && ajax.status === 200) {
+//            if (ajax.responseText === "´succes") {
+//                getEl(".email-form").appendChild(div);
+//            } else {
+//                getEl(".email-form").appendChild(divFalse);
+//                getEl(".email-button").disabled = false;
+//            }
+//        }
+//    }
+//    ajax.send(formData);
+//}
+
